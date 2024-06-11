@@ -1,10 +1,11 @@
-FROM maven:3.8.5-openjdk-17 AS build
-WORKDIR /app
-COPY . .
+FROM maven:3.9.2-eclipse-temurin-17-alpine as builder
+
+COPY ./src src/
+COPY ./pom.xml pom.xml
+
 RUN mvn clean package -DskipTests
 
-FROM openjdk:22-jdk-slim
-WORKDIR /app
-COPY --from=build /app/target/Gramm.ai-0.0.1-SNAPSHOT.jar demo.jar
+FROM eclipse-temurin:17-jre-alpine
+COPY --from=builder target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+CMD ["java","-jar","app.jar"]
