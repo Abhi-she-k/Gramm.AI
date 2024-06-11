@@ -8,5 +8,5 @@ https://gramm-ai.onrender.com/
 
 Demo of Gramm.ai
 
-https://github.com/Abhi-she-k/Gramm.ai/assets/87787307/79cccddf-d4ad-4b64-92fe-a44989907c96
+https://github.com/Abhi-she-k/Gramm.ai/assets/87787307/921eef83-d25d-404f-bc29-ba54a85cae99
 
